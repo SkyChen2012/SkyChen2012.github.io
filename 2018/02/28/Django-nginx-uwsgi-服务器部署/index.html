@@ -79,12 +79,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="易(Eting)">
-<meta property="og:url" content="http://blogs.Eting.com/index.html">
+<meta name="description" content="这个教训告诉我们，不要随便相信别人博客里的东西，文档还是官方的靠谱。。。 安装Django + nginx + uwsgi八仙过海-各显神通，安装的版本 1234567891011121314-!- » python --version                                Python 2.7.5-!- ~ » uwsgi --version2.0.15!- ~ » ng">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Django + nginx + uwsgi 服务器部署">
+<meta property="og:url" content="http://blogs.Eting.com/2018/02/28/Django-nginx-uwsgi-服务器部署/index.html">
 <meta property="og:site_name" content="易(Eting)">
+<meta property="og:description" content="这个教训告诉我们，不要随便相信别人博客里的东西，文档还是官方的靠谱。。。 安装Django + nginx + uwsgi八仙过海-各显神通，安装的版本 1234567891011121314-!- » python --version                                Python 2.7.5-!- ~ » uwsgi --version2.0.15!- ~ » ng">
+<meta property="og:updated_time" content="2018-02-27T23:50:38.196Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="易(Eting)">
+<meta name="twitter:title" content="Django + nginx + uwsgi 服务器部署">
+<meta name="twitter:description" content="这个教训告诉我们，不要随便相信别人博客里的东西，文档还是官方的靠谱。。。 安装Django + nginx + uwsgi八仙过海-各显神通，安装的版本 1234567891011121314-!- » python --version                                Python 2.7.5-!- ~ » uwsgi --version2.0.15!- ~ » ng">
 
 
 
@@ -114,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://blogs.Eting.com/"/>
+  <link rel="canonical" href="http://blogs.Eting.com/2018/02/28/Django-nginx-uwsgi-服务器部署/"/>
 
 
 
 
 
-  <title>易(Eting)</title>
+  <title>Django + nginx + uwsgi 服务器部署 | 易(Eting)</title>
   
 
 
@@ -139,8 +143,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -213,9 +216,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -245,9 +248,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/28/Django-nginx-uwsgi-服务器部署/" itemprop="url">Django + nginx + uwsgi 服务器部署</a></h1>
+          <h1 class="post-title" itemprop="name headline">Django + nginx + uwsgi 服务器部署</h1>
         
 
         <div class="post-meta">
@@ -297,9 +298,7 @@
       
 
       
-        
-          
-            <h1 id="这个教训告诉我们，不要随便相信别人博客里的东西，文档还是官方的靠谱。。。"><a href="#这个教训告诉我们，不要随便相信别人博客里的东西，文档还是官方的靠谱。。。" class="headerlink" title="这个教训告诉我们，不要随便相信别人博客里的东西，文档还是官方的靠谱。。。"></a>这个教训告诉我们，不要随便相信别人博客里的东西，文档还是官方的靠谱。。。</h1><ol>
+        <h1 id="这个教训告诉我们，不要随便相信别人博客里的东西，文档还是官方的靠谱。。。"><a href="#这个教训告诉我们，不要随便相信别人博客里的东西，文档还是官方的靠谱。。。" class="headerlink" title="这个教训告诉我们，不要随便相信别人博客里的东西，文档还是官方的靠谱。。。"></a>这个教训告诉我们，不要随便相信别人博客里的东西，文档还是官方的靠谱。。。</h1><ol>
 <li><p>安装Django + nginx + uwsgi<br>八仙过海-各显神通，安装的版本</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">-!- » python --version                                </span><br><span class="line">Python 2.7.5</span><br><span class="line">-!- ~ » uwsgi --version</span><br><span class="line">2.0.15</span><br><span class="line">!- ~ » nginx -v                                                            </span><br><span class="line">nginx version: nginx/1.10.2</span><br><span class="line">-!- Server/HelloWorld » python</span><br><span class="line">Python 2.7.5 (default, Nov  6 2016, 00:28:07)</span><br><span class="line">[GCC 4.8.5 20150623 (Red Hat 4.8.5-11)] on linux2</span><br><span class="line">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</span><br><span class="line">&gt;&gt;&gt; import django</span><br><span class="line">&gt;&gt;&gt; django.VERSION</span><br><span class="line">(1, 11, 3, u&apos;final&apos;, 0)</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
 </li>
@@ -332,8 +331,6 @@
 <p>注意，要打开网络端口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#开启端口</span><br><span class="line">firewall-cmd --zone=public --add-port=80/tcp --permanent</span><br><span class="line">firewall-cmd --zone=public --add-port=8000/tcp --permanent</span><br><span class="line">#重启防火墙</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure></p>
 <p>工程树（以前不会看，后来发现，这个树还是挺有用的）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line">-!- Server/HelloWorld » tree                                              </span><br><span class="line">.</span><br><span class="line">├── db.sqlite3</span><br><span class="line">├── django_wsgi.py</span><br><span class="line">├── django_wsgi.pyc</span><br><span class="line">├── HelloWorld</span><br><span class="line">│   ├── __init__.py</span><br><span class="line">│   ├── __init__.pyc</span><br><span class="line">│   ├── settings.py</span><br><span class="line">│   ├── settings.pyc</span><br><span class="line">│   ├── urls.py</span><br><span class="line">│   ├── urls.pyc</span><br><span class="line">│   ├── wsgi.py</span><br><span class="line">│   └── wsgi.pyc</span><br><span class="line">├── manage.py</span><br><span class="line">├── static</span><br><span class="line">│   └── admin</span><br><span class="line">│       ├── css</span><br><span class="line">│       │   ├── base.css</span><br><span class="line">│       │   ├── changelists.css</span><br><span class="line">│       │   ├── dashboard.css</span><br><span class="line">│       │   ├── fonts.css</span><br><span class="line">│       │   ├── forms.css</span><br><span class="line">│       │   ├── login.css</span><br><span class="line">│       │   ├── rtl.css</span><br><span class="line">│       │   └── widgets.css</span><br><span class="line">│       ├── fonts</span><br><span class="line">│       │   ├── LICENSE.txt</span><br><span class="line">│       │   ├── README.txt</span><br><span class="line">│       │   ├── Roboto-Bold-webfont.woff</span><br><span class="line">│       │   ├── Roboto-Light-webfont.woff</span><br><span class="line">│       │   └── Roboto-Regular-webfont.woff</span><br><span class="line">│       ├── img</span><br><span class="line">│       │   ├── calendar-icons.svg</span><br><span class="line">│       │   ├── gis</span><br><span class="line">│       │   │   ├── move_vertex_off.svg</span><br><span class="line">│       │   │   └── move_vertex_on.svg</span><br><span class="line">│       │   ├── icon-addlink.svg</span><br><span class="line">│       │   ├── icon-alert.svg</span><br><span class="line">│       │   ├── icon-calendar.svg</span><br><span class="line">│       │   ├── icon-changelink.svg</span><br><span class="line">│       │   ├── icon-clock.svg</span><br><span class="line">│       │   ├── icon-deletelink.svg</span><br><span class="line">│       │   ├── icon-no.svg</span><br><span class="line">│       │   ├── icon-unknown-alt.svg</span><br><span class="line">│       │   ├── icon-unknown.svg</span><br><span class="line">│       │   ├── icon-yes.svg</span><br><span class="line">│       │   ├── inline-delete.svg</span><br><span class="line">│       │   ├── LICENSE</span><br><span class="line">│       │   ├── README.txt</span><br><span class="line">│       │   ├── search.svg</span><br><span class="line">│       │   ├── selector-icons.svg</span><br><span class="line">│       │   ├── sorting-icons.svg</span><br><span class="line">│       │   ├── tooltag-add.svg</span><br><span class="line">│       │   └── tooltag-arrowright.svg</span><br><span class="line">│       └── js</span><br><span class="line">│           ├── actions.js</span><br><span class="line">│           ├── actions.min.js</span><br><span class="line">│           ├── admin</span><br><span class="line">│           │   ├── DateTimeShortcuts.js</span><br><span class="line">│           │   └── RelatedObjectLookups.js</span><br><span class="line">│           ├── calendar.js</span><br><span class="line">│           ├── cancel.js</span><br><span class="line">│           ├── change_form.js</span><br><span class="line">│           ├── collapse.js</span><br><span class="line">│           ├── collapse.min.js</span><br><span class="line">│           ├── core.js</span><br><span class="line">│           ├── inlines.js</span><br><span class="line">│           ├── inlines.min.js</span><br><span class="line">│           ├── jquery.init.js</span><br><span class="line">│           ├── popup_response.js</span><br><span class="line">│           ├── prepopulate_init.js</span><br><span class="line">│           ├── prepopulate.js</span><br><span class="line">│           ├── prepopulate.min.js</span><br><span class="line">│           ├── SelectBox.js</span><br><span class="line">│           ├── SelectFilter2.js</span><br><span class="line">│           ├── timeparse.js</span><br><span class="line">│           ├── urlify.js</span><br><span class="line">│           └── vendor</span><br><span class="line">│               ├── jquery</span><br><span class="line">│               │   ├── jquery.js</span><br><span class="line">│               │   ├── jquery.min.js</span><br><span class="line">│               │   └── LICENSE-JQUERY.txt</span><br><span class="line">│               └── xregexp</span><br><span class="line">│                   ├── LICENSE-XREGEXP.txt</span><br><span class="line">│                   ├── xregexp.js</span><br><span class="line">│                   └── xregexp.min.js</span><br><span class="line">└── uwsgi.xml</span><br><span class="line"></span><br><span class="line">12 directories, 74 files</span><br></pre></td></tr></table></figure></p>
 
-          
-        
       
     </div>
     
@@ -350,162 +347,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blogs.Eting.com/2017/11/09/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="小橙子(Benson.Chen)">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="易(Eting)">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/09/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-09T00:00:00+08:00">
-                2017-11-09
-              </time>
+              <a href="/2017/11/09/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">in</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/搭建博客/" itemprop="url" rel="index">
-                    <span itemprop="name">搭建博客</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -515,10 +378,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -526,6 +390,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -546,8 +414,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -607,6 +484,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#这个教训告诉我们，不要随便相信别人博客里的东西，文档还是官方的靠谱。。。"><span class="nav-number">1.</span> <span class="nav-text">这个教训告诉我们，不要随便相信别人博客里的东西，文档还是官方的靠谱。。。</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -740,6 +633,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
