@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="记录几个比较好玩的工具，有兴趣的可以玩一玩，休闲储备知识ARP欺骗使用工具 ettercap 抓包工具使用工具 wireshark  Ssl数据嗅探使用工具 Sslstrip  Session劫持使用工具 ferret  Url嗅探使用工具 urlsnarf     休闲储备知识 Tools 预留     ARP欺骗 ettercap 待学习   抓包工具 wireshark 待学习   Ssl数">
+<meta name="description" content="nginx监听一个端口多域名转发配置123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778#user  nobody;worker_processes  1;#">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ARP欺骗+嗅探+DNS欺骗+Session劫持">
-<meta property="og:url" content="http://blogs.Eting.com/2018/02/28/ARP欺骗-嗅探-DNS欺骗-Session劫持/index.html">
+<meta property="og:title" content="nginx-端口多域名转发">
+<meta property="og:url" content="http://blogs.Eting.com/2018/03/01/nginx-端口多域名转发/index.html">
 <meta property="og:site_name" content="易(Eting)">
-<meta property="og:description" content="记录几个比较好玩的工具，有兴趣的可以玩一玩，休闲储备知识ARP欺骗使用工具 ettercap 抓包工具使用工具 wireshark  Ssl数据嗅探使用工具 Sslstrip  Session劫持使用工具 ferret  Url嗅探使用工具 urlsnarf     休闲储备知识 Tools 预留     ARP欺骗 ettercap 待学习   抓包工具 wireshark 待学习   Ssl数">
+<meta property="og:description" content="nginx监听一个端口多域名转发配置123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778#user  nobody;worker_processes  1;#">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-01T09:20:00.378Z">
+<meta property="og:updated_time" content="2018-03-01T09:19:58.027Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ARP欺骗+嗅探+DNS欺骗+Session劫持">
-<meta name="twitter:description" content="记录几个比较好玩的工具，有兴趣的可以玩一玩，休闲储备知识ARP欺骗使用工具 ettercap 抓包工具使用工具 wireshark  Ssl数据嗅探使用工具 Sslstrip  Session劫持使用工具 ferret  Url嗅探使用工具 urlsnarf     休闲储备知识 Tools 预留     ARP欺骗 ettercap 待学习   抓包工具 wireshark 待学习   Ssl数">
+<meta name="twitter:title" content="nginx-端口多域名转发">
+<meta name="twitter:description" content="nginx监听一个端口多域名转发配置123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778#user  nobody;worker_processes  1;#">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://blogs.Eting.com/2018/02/28/ARP欺骗-嗅探-DNS欺骗-Session劫持/"/>
+  <link rel="canonical" href="http://blogs.Eting.com/2018/03/01/nginx-端口多域名转发/"/>
 
 
 
 
 
-  <title>ARP欺骗+嗅探+DNS欺骗+Session劫持 | 易(Eting)</title>
+  <title>nginx-端口多域名转发 | 易(Eting)</title>
   
 
 
@@ -262,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blogs.Eting.com/2018/02/28/ARP欺骗-嗅探-DNS欺骗-Session劫持/">
+    <link itemprop="mainEntityOfPage" href="http://blogs.Eting.com/2018/03/01/nginx-端口多域名转发/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小橙子(Benson.Chen)">
@@ -279,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ARP欺骗+嗅探+DNS欺骗+Session劫持</h1>
+          <h1 class="post-title" itemprop="name headline">nginx-端口多域名转发</h1>
         
 
         <div class="post-meta">
@@ -291,8 +291,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-28T09:01:46+08:00">
-                2018-02-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-01T17:17:50+08:00">
+                2018-03-01
               </time>
             
 
@@ -314,8 +314,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/休闲/" itemprop="url" rel="index">
-                    <span itemprop="name">休闲</span>
+                  <a href="/categories/搭建博客/" itemprop="url" rel="index">
+                    <span itemprop="name">搭建博客</span>
                   </a>
                 </span>
 
@@ -351,48 +351,7 @@
       
 
       
-        <h3 id="记录几个比较好玩的工具，有兴趣的可以玩一玩，休闲储备知识"><a href="#记录几个比较好玩的工具，有兴趣的可以玩一玩，休闲储备知识" class="headerlink" title="记录几个比较好玩的工具，有兴趣的可以玩一玩，休闲储备知识"></a>记录几个比较好玩的工具，有兴趣的可以玩一玩，休闲储备知识</h3><h2 id="ARP欺骗"><a href="#ARP欺骗" class="headerlink" title="ARP欺骗"></a>ARP欺骗</h2><p>使用工具 <font face="微软雅黑" color="#0000CD">ettercap</font></p>
-<h2 id="抓包工具"><a href="#抓包工具" class="headerlink" title="抓包工具"></a>抓包工具</h2><p>使用工具 <font face="微软雅黑" color="#0000CD">wireshark</font> </p>
-<h2 id="Ssl数据嗅探"><a href="#Ssl数据嗅探" class="headerlink" title="Ssl数据嗅探"></a>Ssl数据嗅探</h2><p>使用工具 <font face="微软雅黑" color="#0000CD">Sslstrip</font> </p>
-<h2 id="Session劫持"><a href="#Session劫持" class="headerlink" title="Session劫持"></a>Session劫持</h2><p>使用工具 <font face="微软雅黑" color="#0000CD">ferret</font> </p>
-<h2 id="Url嗅探"><a href="#Url嗅探" class="headerlink" title="Url嗅探"></a>Url嗅探</h2><p>使用工具 <font face="微软雅黑" color="#0000CD">urlsnarf</font> </p>
-<table>
-<thead>
-<tr>
-<th>休闲储备知识</th>
-<th style="text-align:center">Tools</th>
-<th style="text-align:center">预留</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ARP欺骗</td>
-<td style="text-align:center">ettercap</td>
-<td style="text-align:center"><font face="微软雅黑" color="#FF00FF">待学习</font></td>
-</tr>
-<tr>
-<td>抓包工具</td>
-<td style="text-align:center">wireshark</td>
-<td style="text-align:center"><font face="微软雅黑" color="#FF00FF">待学习</font></td>
-</tr>
-<tr>
-<td>Ssl数据嗅探</td>
-<td style="text-align:center">Sslstrip</td>
-<td style="text-align:center"><font face="微软雅黑" color="#FF00FF">待学习</font></td>
-</tr>
-<tr>
-<td>Session劫持</td>
-<td style="text-align:center">ferret</td>
-<td style="text-align:center"><font face="微软雅黑" color="#FF00FF">待学习</font></td>
-</tr>
-<tr>
-<td>Url嗅探</td>
-<td style="text-align:center">urlsnarf</td>
-<td style="text-align:center"><font face="微软雅黑" color="#FF00FF">待学习</font></td>
-</tr>
-</tbody>
-</table>
-
+        <h1 id="nginx监听一个端口多域名转发配置"><a href="#nginx监听一个端口多域名转发配置" class="headerlink" title="nginx监听一个端口多域名转发配置"></a>nginx监听一个端口多域名转发配置</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">#user  nobody;</span><br><span class="line">worker_processes  1;</span><br><span class="line"></span><br><span class="line">#error_log  logs/error.log;</span><br><span class="line">#error_log  logs/error.log  notice;</span><br><span class="line">#error_log  logs/error.log  info;</span><br><span class="line"></span><br><span class="line">#pid        logs/nginx.pid;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    include       mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    #log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '</span><br><span class="line">    #                  '$status $body_bytes_sent "$http_referer" '</span><br><span class="line">    #                  '"$http_user_agent" "$http_x_forwarded_for"';</span><br><span class="line"></span><br><span class="line">    #access_log  logs/access.log  main;</span><br><span class="line"></span><br><span class="line">    sendfile        on;</span><br><span class="line">    #tcp_nopush     on;</span><br><span class="line"></span><br><span class="line">    #keepalive_timeout  0;</span><br><span class="line">    keepalive_timeout  65;</span><br><span class="line"></span><br><span class="line">    #gzip  on;</span><br><span class="line">    #用服务器IP不能访问</span><br><span class="line">     server &#123;</span><br><span class="line">        listen       80;</span><br><span class="line">        server_name 182.92.xx.xx;</span><br><span class="line">        error_page 404 401 400  /400.html;</span><br><span class="line"></span><br><span class="line">        location / &#123;             </span><br><span class="line">            root   html;</span><br><span class="line">            index 400.html;        </span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">        location = /40x.html&#123;</span><br><span class="line">            root html;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    server &#123;</span><br><span class="line">        listen       80;</span><br><span class="line">        server_name  xxx1.com.cn www.xxx1.com.cn;</span><br><span class="line"> </span><br><span class="line">        location / &#123;</span><br><span class="line">            proxy_pass  http://localhost:8091;</span><br><span class="line">            proxy_set_header Host $host;</span><br><span class="line">            proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">            root   html;</span><br><span class="line">            index  index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    server &#123;</span><br><span class="line">        listen       80;</span><br><span class="line">        server_name  xxx2.com www.xxx2.com;</span><br><span class="line"> </span><br><span class="line">        location / &#123;</span><br><span class="line">            proxy_pass  http://localhost:7080;</span><br><span class="line">            proxy_set_header Host $host;</span><br><span class="line">            proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">            root   html;</span><br><span class="line">            index  index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -416,8 +375,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/28/Django-nginx-uwsgi-服务器部署/" rel="next" title="Django + nginx + uwsgi 服务器部署">
-                <i class="fa fa-chevron-left"></i> Django + nginx + uwsgi 服务器部署
+              <a href="/2018/03/01/iOS-内存管理-一/" rel="next" title="iOS:内存管理[一]">
+                <i class="fa fa-chevron-left"></i> iOS:内存管理[一]
               </a>
             
           </div>
@@ -425,10 +384,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/02/28/Nginx-Tomcat-配置负载均衡/" rel="prev" title="Nginx + Tomcat 配置负载均衡">
-                Nginx + Tomcat 配置负载均衡 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -564,7 +519,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#记录几个比较好玩的工具，有兴趣的可以玩一玩，休闲储备知识"><span class="nav-number">1.</span> <span class="nav-text">记录几个比较好玩的工具，有兴趣的可以玩一玩，休闲储备知识</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ARP欺骗"><span class="nav-number"></span> <span class="nav-text">ARP欺骗</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抓包工具"><span class="nav-number"></span> <span class="nav-text">抓包工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ssl数据嗅探"><span class="nav-number"></span> <span class="nav-text">Ssl数据嗅探</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Session劫持"><span class="nav-number"></span> <span class="nav-text">Session劫持</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Url嗅探"><span class="nav-number"></span> <span class="nav-text">Url嗅探</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nginx监听一个端口多域名转发配置"><span class="nav-number">1.</span> <span class="nav-text">nginx监听一个端口多域名转发配置</span></a></li></ol></div>
             
 
           </div>
