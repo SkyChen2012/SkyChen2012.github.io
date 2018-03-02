@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="记录几个比较好玩的工具，有兴趣的可以玩一玩，休闲储备知识ARP欺骗使用工具 ettercap 抓包工具使用工具 wireshark  Ssl数据嗅探使用工具 Sslstrip  Session劫持使用工具 ferret  Url嗅探使用工具 urlsnarf     休闲储备知识 Tools 预留     ARP欺骗 ettercap 待学习   抓包工具 wireshark 待学习   Ssl数">
+<meta name="description" content="分析技术选取方案多线程下载GCD和OpeationQueue:都是iOS提供的十分方便的多线程实现方案，GCD使用起来方便简单，但是由于可控性较差，反而不如OperationQueue和Operation的组合可定制性更强。 断点续传NSURLSessionDownloadTask和NSURLSessionDataTask：都可实现断点续传，downloadTask会由系统在下载时在temp文件下">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ARP欺骗+嗅探+DNS欺骗+Session劫持">
-<meta property="og:url" content="http://blogs.Eting.com/2018/02/28/ARP欺骗-嗅探-DNS欺骗-Session劫持/index.html">
+<meta property="og:title" content="iOS:多线程下载&amp;&amp;断点续传">
+<meta property="og:url" content="http://blogs.Eting.com/2018/03/02/iOS-多线程下载-断点续传/index.html">
 <meta property="og:site_name" content="易(Eting)">
-<meta property="og:description" content="记录几个比较好玩的工具，有兴趣的可以玩一玩，休闲储备知识ARP欺骗使用工具 ettercap 抓包工具使用工具 wireshark  Ssl数据嗅探使用工具 Sslstrip  Session劫持使用工具 ferret  Url嗅探使用工具 urlsnarf     休闲储备知识 Tools 预留     ARP欺骗 ettercap 待学习   抓包工具 wireshark 待学习   Ssl数">
+<meta property="og:description" content="分析技术选取方案多线程下载GCD和OpeationQueue:都是iOS提供的十分方便的多线程实现方案，GCD使用起来方便简单，但是由于可控性较差，反而不如OperationQueue和Operation的组合可定制性更强。 断点续传NSURLSessionDownloadTask和NSURLSessionDataTask：都可实现断点续传，downloadTask会由系统在下载时在temp文件下">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-01T09:20:00.378Z">
+<meta property="og:updated_time" content="2018-03-02T08:53:01.170Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ARP欺骗+嗅探+DNS欺骗+Session劫持">
-<meta name="twitter:description" content="记录几个比较好玩的工具，有兴趣的可以玩一玩，休闲储备知识ARP欺骗使用工具 ettercap 抓包工具使用工具 wireshark  Ssl数据嗅探使用工具 Sslstrip  Session劫持使用工具 ferret  Url嗅探使用工具 urlsnarf     休闲储备知识 Tools 预留     ARP欺骗 ettercap 待学习   抓包工具 wireshark 待学习   Ssl数">
+<meta name="twitter:title" content="iOS:多线程下载&amp;&amp;断点续传">
+<meta name="twitter:description" content="分析技术选取方案多线程下载GCD和OpeationQueue:都是iOS提供的十分方便的多线程实现方案，GCD使用起来方便简单，但是由于可控性较差，反而不如OperationQueue和Operation的组合可定制性更强。 断点续传NSURLSessionDownloadTask和NSURLSessionDataTask：都可实现断点续传，downloadTask会由系统在下载时在temp文件下">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://blogs.Eting.com/2018/02/28/ARP欺骗-嗅探-DNS欺骗-Session劫持/"/>
+  <link rel="canonical" href="http://blogs.Eting.com/2018/03/02/iOS-多线程下载-断点续传/"/>
 
 
 
 
 
-  <title>ARP欺骗+嗅探+DNS欺骗+Session劫持 | 易(Eting)</title>
+  <title>iOS:多线程下载&&断点续传 | 易(Eting)</title>
   
 
 
@@ -262,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blogs.Eting.com/2018/02/28/ARP欺骗-嗅探-DNS欺骗-Session劫持/">
+    <link itemprop="mainEntityOfPage" href="http://blogs.Eting.com/2018/03/02/iOS-多线程下载-断点续传/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小橙子(Benson.C)">
@@ -279,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ARP欺骗+嗅探+DNS欺骗+Session劫持</h1>
+          <h1 class="post-title" itemprop="name headline">iOS:多线程下载&&断点续传</h1>
         
 
         <div class="post-meta">
@@ -291,8 +291,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-28T09:01:46+08:00">
-                2018-02-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-02T16:49:19+08:00">
+                2018-03-02
               </time>
             
 
@@ -314,8 +314,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/休闲/" itemprop="url" rel="index">
-                    <span itemprop="name">休闲</span>
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
                   </a>
                 </span>
 
@@ -351,47 +351,23 @@
       
 
       
-        <h3 id="记录几个比较好玩的工具，有兴趣的可以玩一玩，休闲储备知识"><a href="#记录几个比较好玩的工具，有兴趣的可以玩一玩，休闲储备知识" class="headerlink" title="记录几个比较好玩的工具，有兴趣的可以玩一玩，休闲储备知识"></a>记录几个比较好玩的工具，有兴趣的可以玩一玩，休闲储备知识</h3><h2 id="ARP欺骗"><a href="#ARP欺骗" class="headerlink" title="ARP欺骗"></a>ARP欺骗</h2><p>使用工具 <font face="微软雅黑" color="#0000CD">ettercap</font></p>
-<h2 id="抓包工具"><a href="#抓包工具" class="headerlink" title="抓包工具"></a>抓包工具</h2><p>使用工具 <font face="微软雅黑" color="#0000CD">wireshark</font> </p>
-<h2 id="Ssl数据嗅探"><a href="#Ssl数据嗅探" class="headerlink" title="Ssl数据嗅探"></a>Ssl数据嗅探</h2><p>使用工具 <font face="微软雅黑" color="#0000CD">Sslstrip</font> </p>
-<h2 id="Session劫持"><a href="#Session劫持" class="headerlink" title="Session劫持"></a>Session劫持</h2><p>使用工具 <font face="微软雅黑" color="#0000CD">ferret</font> </p>
-<h2 id="Url嗅探"><a href="#Url嗅探" class="headerlink" title="Url嗅探"></a>Url嗅探</h2><p>使用工具 <font face="微软雅黑" color="#0000CD">urlsnarf</font> </p>
-<table>
-<thead>
-<tr>
-<th>休闲储备知识</th>
-<th style="text-align:center">Tools</th>
-<th style="text-align:center">预留</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ARP欺骗</td>
-<td style="text-align:center">ettercap</td>
-<td style="text-align:center"><font face="微软雅黑" color="#FF00FF">待学习</font></td>
-</tr>
-<tr>
-<td>抓包工具</td>
-<td style="text-align:center">wireshark</td>
-<td style="text-align:center"><font face="微软雅黑" color="#FF00FF">待学习</font></td>
-</tr>
-<tr>
-<td>Ssl数据嗅探</td>
-<td style="text-align:center">Sslstrip</td>
-<td style="text-align:center"><font face="微软雅黑" color="#FF00FF">待学习</font></td>
-</tr>
-<tr>
-<td>Session劫持</td>
-<td style="text-align:center">ferret</td>
-<td style="text-align:center"><font face="微软雅黑" color="#FF00FF">待学习</font></td>
-</tr>
-<tr>
-<td>Url嗅探</td>
-<td style="text-align:center">urlsnarf</td>
-<td style="text-align:center"><font face="微软雅黑" color="#FF00FF">待学习</font></td>
-</tr>
-</tbody>
-</table>
+        <h2 id="分析技术选取方案"><a href="#分析技术选取方案" class="headerlink" title="分析技术选取方案"></a>分析技术选取方案</h2><h3 id="多线程下载"><a href="#多线程下载" class="headerlink" title="多线程下载"></a>多线程下载</h3><p>GCD和OpeationQueue:都是iOS提供的十分方便的多线程实现方案，GCD使用起来方便简单，但是由于可控性较差，反而不如OperationQueue和Operation的组合可定制性更强。</p>
+<h4 id="断点续传"><a href="#断点续传" class="headerlink" title="断点续传"></a>断点续传</h4><p>NSURLSessionDownloadTask和NSURLSessionDataTask：都可实现断点续传，downloadTask会由系统在下载时在temp文件下生成临时文件，并且返还resumeData供断点续传，但由于temp文件下内容随时会被系统清理掉，且在大文件时存在问题，所以采用dataTask,用http的“Range”字段进行断点续传控制。</p>
+<h4 id="结构设计"><a href="#结构设计" class="headerlink" title="结构设计"></a>结构设计</h4><h5 id="1-类划分"><a href="#1-类划分" class="headerlink" title="1.类划分"></a>1.类划分</h5><ul>
+<li>(1).对于每一个下载链接来说都是一个任务，可以抽象成一个任务模型，DownLoadModel。</li>
+<li>(2).下载的具体执行者，由于确定方案是采用operation和operationQueue的方案，则需要重写Operation,完成自己的定制，即具体的下载执行者，DownloadOperation。</li>
+<li>(3).下载下来的内容需要存储在本地，并且在每次续传下载时根据存储的数据和源文件大小比对校正后再去续传，防止意外导致的文件损坏，和记录的导致不一致。即存储每次的下载模型和文件管理，FileHelper和DownloadStore&gt;</li>
+<li>(4).下载管理中心，提供多线程下载和断点续传的管理入口，并把其余各对象结合起来。<br>即简单确定下来基本的类：<br>YHFileDownLoadManager:下载管理中心<br>YHFileDownLoadModel :下载任务模型<br>YHFileDownLoadOperation：下载动作具体执行者<br>YHFileHelper：文件帮助类<br>YHFileDownloadStore：数据库存储类<br>借助第三方：<br>YTKKeyValueStore：用于数据库存储<br>YYModel：模型和Json的转化</li>
+</ul>
+<h5 id="2-功能结构设计"><a href="#2-功能结构设计" class="headerlink" title="2.功能结构设计"></a>2.功能结构设计</h5><ul>
+<li>Manager职责：<br>根据URL和存储目录生成任务模型；判断该任务是否存在；判断存储目录是否存在，不存在则创建；把任务加载到下载队列等待执行；控制任务执行动作：开始，下载，暂停，取消等；存储任务状态到数据库当应用退出或对象销毁时；每次启动时获取上次未完成的下载任务信息。</li>
+<li>Model职责:<br>存储任务的信息，并提供任务的唯一标示，sigleID。</li>
+<li>Operation职责：<br>进行下载或断点续传；每次下载前校正已下载数据大小，维护任务的下载状态。</li>
+<li>FileHelper:<br>文件是否存在与创建；文件夹是否存在与创建；获取文件大小。</li>
+<li>Store职责：<br>将任务模型以键值对的存储方式在数据库表内。</li>
+</ul>
+<h3 id="重点事项："><a href="#重点事项：" class="headerlink" title="重点事项："></a>重点事项：</h3><h4 id="1-模型的状态维护："><a href="#1-模型的状态维护：" class="headerlink" title="(1).模型的状态维护："></a>(1).模型的状态维护：</h4><p>模型当前的状态应该是唯一的，即模型的状态改变需要注意，稍不注意就有可能因为多处改动而造成混论，所以：本人在此采用了数组来维护任务模型，其余地方则都是从该数组内获取的对象的引用，并且模型状态的改变除了创建时的初始状态外，改变只交给了Operation,根据下载的变化来调整模型状态。</p>
+<h4 id="2-Operation的重写："><a href="#2-Operation的重写：" class="headerlink" title="(2).Operation的重写："></a>(2).Operation的重写：</h4><p>继承自系统的Operation,重写时需注意维护几个变量的状态：executing，finished，cancelled,分别对应了是否正在执行，是否完成，是否取消。因为当opeartion提交到queue中后，什么时候开始执行是有系统决定的，而系统是否启动当前任务，暂停当前任务，取消当前任务以及结束当前任务调取下一任务进入队列，则都是由内部几个变量来进行维护的，系统在每次执行任务时，都会去访问这些变量的值以决定下一步动作，所以，要做好这些状态值的维护（没办法，重写了当然是由自己去维护了。。）</p>
 
       
     </div>
@@ -416,8 +392,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/28/Django-nginx-uwsgi-服务器部署/" rel="next" title="Django + nginx + uwsgi 服务器部署">
-                <i class="fa fa-chevron-left"></i> Django + nginx + uwsgi 服务器部署
+              <a href="/2018/03/01/nginx-端口多域名转发/" rel="next" title="nginx-端口多域名转发">
+                <i class="fa fa-chevron-left"></i> nginx-端口多域名转发
               </a>
             
           </div>
@@ -425,10 +401,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/02/28/Nginx-Tomcat-配置负载均衡/" rel="prev" title="Nginx + Tomcat 配置负载均衡">
-                Nginx + Tomcat 配置负载均衡 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -564,7 +536,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#记录几个比较好玩的工具，有兴趣的可以玩一玩，休闲储备知识"><span class="nav-number">1.</span> <span class="nav-text">记录几个比较好玩的工具，有兴趣的可以玩一玩，休闲储备知识</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ARP欺骗"><span class="nav-number"></span> <span class="nav-text">ARP欺骗</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抓包工具"><span class="nav-number"></span> <span class="nav-text">抓包工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ssl数据嗅探"><span class="nav-number"></span> <span class="nav-text">Ssl数据嗅探</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Session劫持"><span class="nav-number"></span> <span class="nav-text">Session劫持</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Url嗅探"><span class="nav-number"></span> <span class="nav-text">Url嗅探</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#分析技术选取方案"><span class="nav-number">1.</span> <span class="nav-text">分析技术选取方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#多线程下载"><span class="nav-number">1.1.</span> <span class="nav-text">多线程下载</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#断点续传"><span class="nav-number">1.1.1.</span> <span class="nav-text">断点续传</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结构设计"><span class="nav-number">1.1.2.</span> <span class="nav-text">结构设计</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-类划分"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">1.类划分</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-功能结构设计"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">2.功能结构设计</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重点事项："><span class="nav-number">1.2.</span> <span class="nav-text">重点事项：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-模型的状态维护："><span class="nav-number">1.2.1.</span> <span class="nav-text">(1).模型的状态维护：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Operation的重写："><span class="nav-number">1.2.2.</span> <span class="nav-text">(2).Operation的重写：</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
