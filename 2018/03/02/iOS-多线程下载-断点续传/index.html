@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="易(Eting)">
 <meta property="og:description" content="多线程下载GCD和OpeationQueue:都是iOS提供的十分方便的多线程实现方案，GCD使用起来方便简单，但是由于可控性较差，反而不如OperationQueue和Operation的组合可定制性更强。 断点续传NSURLSessionDownloadTask和NSURLSessionDataTask：都可实现断点续传，downloadTask会由系统在下载时在temp文件下生成临时文件，并">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-02T08:55:18.356Z">
+<meta property="og:updated_time" content="2018-03-05T00:28:08.584Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS:多线程下载&amp;&amp;断点续传">
 <meta name="twitter:description" content="多线程下载GCD和OpeationQueue:都是iOS提供的十分方便的多线程实现方案，GCD使用起来方便简单，但是由于可控性较差，反而不如OperationQueue和Operation的组合可定制性更强。 断点续传NSURLSessionDownloadTask和NSURLSessionDataTask：都可实现断点续传，downloadTask会由系统在下载时在temp文件下生成临时文件，并">
@@ -357,8 +357,57 @@
 <li>(1).对于每一个下载链接来说都是一个任务，可以抽象成一个任务模型，DownLoadModel。</li>
 <li>(2).下载的具体执行者，由于确定方案是采用operation和operationQueue的方案，则需要重写Operation,完成自己的定制，即具体的下载执行者，DownloadOperation。</li>
 <li>(3).下载下来的内容需要存储在本地，并且在每次续传下载时根据存储的数据和源文件大小比对校正后再去续传，防止意外导致的文件损坏，和记录的导致不一致。即存储每次的下载模型和文件管理，FileHelper和DownloadStore&gt;</li>
-<li>(4).下载管理中心，提供多线程下载和断点续传的管理入口，并把其余各对象结合起来。<br>即简单确定下来基本的类：<br>YHFileDownLoadManager:下载管理中心<br>YHFileDownLoadModel :下载任务模型<br>YHFileDownLoadOperation：下载动作具体执行者<br>YHFileHelper：文件帮助类<br>YHFileDownloadStore：数据库存储类<br>借助第三方：<br>YTKKeyValueStore：用于数据库存储<br>YYModel：模型和Json的转化</li>
+<li>(4).下载管理中心，提供多线程下载和断点续传的管理入口，并把其余各对象结合起来。<br>即简单确定下来基本的类：</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Model</th>
+<th style="text-align:center">职责</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">YHFileDownLoadManager</td>
+<td style="text-align:center">下载管理中心</td>
+</tr>
+<tr>
+<td style="text-align:center">YHFileDownLoadModel</td>
+<td style="text-align:center">下载任务模型</td>
+</tr>
+<tr>
+<td style="text-align:center">YHFileDownLoadOperation</td>
+<td style="text-align:center">下载动作具体执行者</td>
+</tr>
+<tr>
+<td style="text-align:center">YHFileHelper</td>
+<td style="text-align:center">文件帮助类</td>
+</tr>
+<tr>
+<td style="text-align:center">YHFileDownloadStore</td>
+<td style="text-align:center">数据库存储类</td>
+</tr>
+</tbody>
+</table>
+<p>借助第三方</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Model</th>
+<th style="text-align:center">职责</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">YTKKeyValueStore</td>
+<td style="text-align:center">用于数据库存储</td>
+</tr>
+<tr>
+<td style="text-align:center">YYModel</td>
+<td style="text-align:center">模型和Json的转化</td>
+</tr>
+</tbody>
+</table>
 <h5 id="2-功能结构设计"><a href="#2-功能结构设计" class="headerlink" title="2.功能结构设计"></a>2.功能结构设计</h5><ul>
 <li>Manager职责：<br>根据URL和存储目录生成任务模型；判断该任务是否存在；判断存储目录是否存在，不存在则创建；把任务加载到下载队列等待执行；控制任务执行动作：开始，下载，暂停，取消等；存储任务状态到数据库当应用退出或对象销毁时；每次启动时获取上次未完成的下载任务信息。</li>
 <li>Model职责:<br>存储任务的信息，并提供任务的唯一标示，sigleID。</li>
