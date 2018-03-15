@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Alice-&amp;gt;Bob: Hello Bob, how are you? Note right of Bob: Bob thinks Bob--&amp;gt;Alice: I am good thanks!{&quot;theme&quot;:&quot;simple&quot;}  var code = document.getElementById(&quot;sequence-0-code&quot;).value;  var options = JSON.par">
+<meta name="description" content="LC(BoneKit)—序列图12345678910111213141516171819202122title: LC(BoneKit)————序列图participant Aparticipant Bparticipant AlinkSDkparticipant 阿里云note left of A: Android/iOS push note over A: UUID\n styleConfig">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[iot-阿里SDS对接]--bonKit">
 <meta property="og:url" content="http://blogs.Eting.info/2018/03/15/iot-阿里SDS对接-bonKit/index.html">
 <meta property="og:site_name" content="易(Eting)">
-<meta property="og:description" content="Alice-&amp;gt;Bob: Hello Bob, how are you? Note right of Bob: Bob thinks Bob--&amp;gt;Alice: I am good thanks!{&quot;theme&quot;:&quot;simple&quot;}  var code = document.getElementById(&quot;sequence-0-code&quot;).value;  var options = JSON.par">
+<meta property="og:description" content="LC(BoneKit)—序列图12345678910111213141516171819202122title: LC(BoneKit)————序列图participant Aparticipant Bparticipant AlinkSDkparticipant 阿里云note left of A: Android/iOS push note over A: UUID\n styleConfig">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-15T02:58:03.794Z">
+<meta property="og:updated_time" content="2018-03-15T08:47:36.719Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[iot-阿里SDS对接]--bonKit">
-<meta name="twitter:description" content="Alice-&amp;gt;Bob: Hello Bob, how are you? Note right of Bob: Bob thinks Bob--&amp;gt;Alice: I am good thanks!{&quot;theme&quot;:&quot;simple&quot;}  var code = document.getElementById(&quot;sequence-0-code&quot;).value;  var options = JSON.par">
+<meta name="twitter:description" content="LC(BoneKit)—序列图12345678910111213141516171819202122title: LC(BoneKit)————序列图participant Aparticipant Bparticipant AlinkSDkparticipant 阿里云note left of A: Android/iOS push note over A: UUID\n styleConfig">
 
 
 
@@ -302,6 +302,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iot-阿里SDS对接/" itemprop="url" rel="index">
+                    <span itemprop="name">iot-阿里SDS对接</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -329,9 +351,33 @@
       
 
       
-        <p><div id="sequence-0"></div><script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.27/webfontloader.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script><textarea id="sequence-0-code" style="display: none">Alice->Bob: Hello Bob, how are you?
-Note right of Bob: Bob thinks
-Bob-->Alice: I am good thanks!</textarea><textarea id="sequence-0-options" style="display: none">{"theme":"simple"}</textarea><script>  var code = document.getElementById("sequence-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("sequence-0-options").value));  var diagram = Diagram.parse(code);  diagram.drawSVG("sequence-0", options);</script></p>
+        <h1 id="LC-BoneKit-—序列图"><a href="#LC-BoneKit-—序列图" class="headerlink" title="LC(BoneKit)—序列图"></a>LC(BoneKit)—序列图</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">title: LC(BoneKit)————序列图</span><br><span class="line">participant A</span><br><span class="line">participant B</span><br><span class="line">participant AlinkSDk</span><br><span class="line">participant 阿里云</span><br><span class="line"></span><br><span class="line">note left of A: Android/iOS push </span><br><span class="line">note over A: UUID\n styleConfig</span><br><span class="line">A-&gt;B:uuid获取产品</span><br><span class="line">note left of B: 产品最新属性状态</span><br><span class="line">note over B: 渲染控制界面</span><br><span class="line">B-&gt;&gt;AlinkSDk:操作控制界面</span><br><span class="line">note over AlinkSDk:阿里AlinkSDk</span><br><span class="line">AlinkSDk--&gt; 阿里云:阿里AlinkSDk 数据发送</span><br><span class="line">note over 阿里云: 阿里云端</span><br><span class="line">阿里云--&gt; AlinkSDk:阿里AlinkSDk 数据接收</span><br><span class="line">note over AlinkSDk:阿里AlinkSDk</span><br><span class="line">AlinkSDk-&gt;&gt;B:云端数据推送同步</span><br><span class="line">note over B: 重新渲染控制界面</span><br><span class="line">B-&gt;A:产品更新属性状态</span><br><span class="line">note over A: UUID\n styleConfig</span><br><span class="line">note left of A: Android/iOS pop</span><br></pre></td></tr></table></figure>
+<h1 id="Bonkit-界面开发"><a href="#Bonkit-界面开发" class="headerlink" title="Bonkit 界面开发"></a>Bonkit 界面开发</h1><pre><code>Bonkit 基于React Native,基本组件通用，阿里提供了一部分组件，可以提高开发效率。
+</code></pre><h3 id="阿里组件文档"><a href="#阿里组件文档" class="headerlink" title="阿里组件文档"></a><a href="https://open.aliplus.com/bone/component/base/" target="_blank" rel="noopener">阿里组件文档</a></h3><h3 id="基础组件"><a href="#基础组件" class="headerlink" title="基础组件"></a>基础组件</h3><ul>
+<li><a href="">开关</a></li>
+<li><a href="">滑动条</a></li>
+<li><a href="">模式选择</a></li>
+<li><a href="">列表</a></li>
+<li><a href="">alert</a></li>
+<li><a href="">toast</a></li>
+<li><a href="">modal</a></li>
+<li><a href="">actionSheet</a></li>
+<li><a href="">顶部提示条</a></li>
+<li><a href="">提示页面</a></li>
+<li><a href="">断网页面</a></li>
+<li><a href="">iconfont</a></li>
+<li><a href="">预置区块</a></li>
+</ul>
+<h1 id="Bonkit-界面刷新"><a href="#Bonkit-界面刷新" class="headerlink" title="Bonkit 界面刷新"></a><a href="https://open.aliplus.com/bone/api/controller.html" target="_blank" rel="noopener">Bonkit 界面刷新</a></h1><p>! 注意 react-native-actionsheet boneKit提供 需要修改<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">标题隐藏 功能</span><br><span class="line">&lt;!-- 修改 <span class="keyword">var</span> title = config.title || <span class="string">"标题"</span>; --&gt;</span><br><span class="line"><span class="keyword">var</span> title = config.title || <span class="string">""</span>;</span><br><span class="line">...</span><br><span class="line">&lt;!-- 参数一致性修改 --&gt;</span><br><span class="line">set title(title)&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.cls.setState(&#123;title&#125;)</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="Bonkit-数据发送"><a href="#Bonkit-数据发送" class="headerlink" title="Bonkit 数据发送"></a>Bonkit 数据发送</h1><p> <a href="https://iot.aliyun.com/docs/develop/server/api.html#summary" target="_blank" rel="noopener">客户端通用API</a></p>
+<p>产品相关 – (查询厂商的产品列表)[](查询产品信息)(查询标准属性)</p>
+<p>设备相关 – (注册设备)(绑定设备)(获取设备最新状态)(设置设备属性)(获取设备详情)(上报设备数据)(更新设备昵称)(保存设备私有数据)(提取设备私有数据)(请求设备服务)(查询子设备列表)(设备数据清理)</p>
+<p>用户相关 – (获取系统时间)(生成二维码内容)(扫描二维码)(解绑设备)(管理员解绑其他用户)(获取用户设备列表)(保存用户私有数据)(获取用户私有数据)(通过三方账号ID和类型获取云账号ID)</p>
+<p>! 注意<br>设备注册请求接口 – mtop.openalink.app.core.device.requestremoteservice</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 产品入网配置 --&gt;</span><br><span class="line">    - <span class="keyword">this</span>.ali_api_fuc(<span class="string">'mtop.openalink.app.core.device.requestremoteservice'</span>,</span><br><span class="line">                      &#123; <span class="attr">uuid</span>:Bone.query.uuid,</span><br><span class="line">                        args:<span class="built_in">JSON</span>.stringify(&#123;<span class="attr">enable</span>:<span class="string">"1"</span>,<span class="attr">duration</span>:<span class="string">"120"</span>,<span class="attr">shortModel</span>:<span class="string">"00501f4b"</span>&#125;),</span><br><span class="line">                        service:<span class="string">"PermitJoin"</span>&#125;,</span><br><span class="line">                       (res,error) =&gt; &#123;<span class="built_in">console</span>.log(res)&#125;);</span><br><span class="line">&lt;!-- 获取服务器端产品列表 --&gt;</span><br><span class="line">    - <span class="keyword">this</span>.ali_api_fuc(<span class="string">'mtop.openalink.app.product.list'</span>, </span><br><span class="line">                        &#123;&#125;, </span><br><span class="line">                        (res,error) =&gt; &#123;<span class="built_in">console</span>.log(res)&#125;);</span><br><span class="line">&lt;!-- 获取产品详情 --&gt;</span><br><span class="line">    - <span class="keyword">this</span>.ali_api_fuc(<span class="string">'mtop.openalink.app.core.device.getdetail'</span>, </span><br><span class="line">                        &#123;<span class="attr">uuid</span>: Bone.query.uuid&#125;, </span><br><span class="line">                        (res,error) =&gt; &#123;<span class="keyword">this</span>.refresh(res,error)&#125;);</span><br><span class="line">&lt;!-- 产品解绑 --&gt;</span><br><span class="line">    - <span class="keyword">this</span>.ali_api_fuc(<span class="string">'mtop.openalink.app.core.user.unbinddevice'</span>, </span><br><span class="line">                        &#123;<span class="attr">uuid</span>: Bone.query.uuid&#125;, </span><br><span class="line">                        (res,error) =&gt; &#123;<span class="built_in">console</span>.log(res)&#125;);</span><br><span class="line">&lt;!-- 产品绑定 --&gt;</span><br><span class="line">    - <span class="keyword">this</span>.ali_api_fuc(<span class="string">'mtop.openalink.app.core.user.binddevice'</span>, </span><br><span class="line">                        &#123;<span class="attr">uuid</span>: Bone.query.uuid&#125;, </span><br><span class="line">                        (res,error) =&gt; &#123;&#125;);</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 阿里通用请求接口</span></span><br><span class="line"><span class="comment"> * @param &#123;function&#125; callback 回调</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">ali_api_fuc(ali_api,params,callback)&#123;</span><br><span class="line">      Bone.request(ali_api, params)</span><br><span class="line">          .response(<span class="function">(<span class="params">next, reject, res</span>)=&gt;</span>&#123;</span><br><span class="line">              <span class="comment">//resHandler</span></span><br><span class="line">              <span class="built_in">console</span>.log(res);</span><br><span class="line">              <span class="keyword">if</span> (callback)&#123;</span><br><span class="line">                callback(res,<span class="literal">null</span>)</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;).catch(<span class="function">(<span class="params">error</span>) =&gt;</span> &#123;</span><br><span class="line">              <span class="built_in">console</span>.log(error);</span><br><span class="line">              <span class="keyword">if</span> (callback)&#123;</span><br><span class="line">                callback(res,<span class="literal">null</span>)</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Bonkit-数据接收"><a href="#Bonkit-数据接收" class="headerlink" title="Bonkit 数据接收"></a>Bonkit 数据接收</h1><p><a href="https://open.aliplus.com/bone/api/watch.html" target="_blank" rel="noopener">数据接收</a><br>在一个容器内默认不会收到任何的设备数据，你需要手动管理哪些设备需要往容器中发送设备数据。 在容器内将维护一个需要监听的 UUID 队列，该队列一开始是空的，只有在队列中的 UUID 且将监听总开关打开的情况下，才会收到设备数据</p>
+<p>⚠️ 注意<br>    TRD: TRD 产品属性表</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">this</span>.device = <span class="keyword">new</span> <span class="keyword">this</span>.ctx.service.device(<span class="string">"DAB7900A7DDB66363A5A0F18541DD4C3"</span>, TRD);</span><br><span class="line"><span class="keyword">this</span>.device.applyStatusMiddleware(<span class="keyword">this</span>.deviceStatusChange);</span><br><span class="line">Bone.watch.addUUID([<span class="string">"DAB7900A7DDB66363A5A0F18541DD4C3"</span>]);</span><br><span class="line"></span><br><span class="line">deviceStatusChange = <span class="function"><span class="params">app</span> =&gt;</span> next =&gt; <span class="function">(<span class="params">error, state</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// 打印 CurrentTemp 的值</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"state"</span>,state);</span><br><span class="line">        <span class="comment">// 用特征对象打印 CurrentTemp 的值</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"this.device.co"</span>,<span class="keyword">this</span>.device.co);</span><br><span class="line">        <span class="comment">// 打印 Switch 的所有可用标签</span></span><br><span class="line">        <span class="comment">// 打印 Switch 的所有可用标签</span></span><br><span class="line">        <span class="comment">// 打包该消息与上一次数据发生了变化的 key</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"state.keyChange"</span>,state.keyChange);</span><br><span class="line">        <span class="keyword">return</span> next(error, state);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -416,8 +462,17 @@ Bob-->Alice: I am good thanks!</textarea><textarea id="sequence-0-options" style
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -447,7 +502,7 @@ Bob-->Alice: I am good thanks!</textarea><textarea id="sequence-0-options" style
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -481,6 +536,22 @@ Bob-->Alice: I am good thanks!</textarea><textarea id="sequence-0-options" style
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LC-BoneKit-—序列图"><span class="nav-number">1.</span> <span class="nav-text">LC(BoneKit)—序列图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bonkit-界面开发"><span class="nav-number">2.</span> <span class="nav-text">Bonkit 界面开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#阿里组件文档"><span class="nav-number">2.0.1.</span> <span class="nav-text">阿里组件文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基础组件"><span class="nav-number">2.0.2.</span> <span class="nav-text">基础组件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bonkit-界面刷新"><span class="nav-number">3.</span> <span class="nav-text">Bonkit 界面刷新</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bonkit-数据发送"><span class="nav-number">4.</span> <span class="nav-text">Bonkit 数据发送</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bonkit-数据接收"><span class="nav-number">5.</span> <span class="nav-text">Bonkit 数据接收</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
