@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="这个教训告诉我们，不要随便相信别人博客里的东西，文档还是官方的靠谱 ___NextCloud 是 OwnCloud 的开源分支，使用 PHP 语言开发，类似程序通常采用 LAMP 或 LNMP 运行环境。本文介绍在 Ubuntu 16.04 LTS 系统上安装 NextCloud 13 最新版的标准方法。  运行环境 WEB 服务器：Apache 2.x 数据库：MariaDB PHP：php 7">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NextCloud服务部署">
+<meta property="og:url" content="http://blogs.Eting.info/2018/04/17/NextCloud服务部署/index.html">
+<meta property="og:site_name" content="易(Eting)">
+<meta property="og:description" content="这个教训告诉我们，不要随便相信别人博客里的东西，文档还是官方的靠谱 ___NextCloud 是 OwnCloud 的开源分支，使用 PHP 语言开发，类似程序通常采用 LAMP 或 LNMP 运行环境。本文介绍在 Ubuntu 16.04 LTS 系统上安装 NextCloud 13 最新版的标准方法。  运行环境 WEB 服务器：Apache 2.x 数据库：MariaDB PHP：php 7">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-17T08:25:00.330Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NextCloud服务部署">
+<meta name="twitter:description" content="这个教训告诉我们，不要随便相信别人博客里的东西，文档还是官方的靠谱 ___NextCloud 是 OwnCloud 的开源分支，使用 PHP 语言开发，类似程序通常采用 LAMP 或 LNMP 运行环境。本文介绍在 Ubuntu 16.04 LTS 系统上安装 NextCloud 13 最新版的标准方法。  运行环境 WEB 服务器：Apache 2.x 数据库：MariaDB PHP：php 7">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blogs.Eting.info/2018/04/17/NextCloud服务部署/"/>
+
+
+
+
+
+  <title>NextCloud服务部署 | 易(Eting)</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+        <a href="https://github.com/SkyChen2012" class="github-corner" aria-label="View source on Github"><svg width="92" height="92" viewBox="0 0 250 250" style="fill:#151513;color:#fff;position:absolute;top:0;border:0;right:0" aria-hidden="true"><path d="M0 0 115 115 130 115 142 142 250 250 250 0Z"></path><path d="M128.3 109C113.8 99.7 119 89.6 119 89.6 122 82.7 120.5 78.6 120.5 78.6 119.2 72 123.4 76.3 123.4 76.3 127.3 80.9 125.5 87.3 125.5 87.3 122.9 97.6 130.6 101.9 134.4 103.2" fill="currentColor" style="transform-origin:130px 106px" class="octo-arm"></path><path d="M115 115C114.9 115.1 118.7 116.5 119.8 115.4L133.7 101.6C136.9 99.2 139.9 98.4 142.2 98.6 133.8 88 127.5 74.4 143.8 58 148.5 53.4 154 51.2 159.7 51 160.3 49.4 163.2 43.6 171.4 40.1 171.4 40.1 176.1 42.5 178.8 56.2 183.1 58.6 187.2 61.8 190.9 65.4 194.5 69 197.7 73.2 200.1 77.6 213.8 80.2 216.3 84.9 216.3 84.9 212.7 93.1 206.9 96 205.4 96.6 205.1 102.4 203 107.8 198.3 112.5 181.9 128.9 168.3 122.5 157.7 114.1 157.9 116.9 156.7 120.9 152.7 124.9L141 136.5C139.8 137.7 141.6 141.9 141.8 141.8Z" fill="currentColor" class="octo-body"></path></svg></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">易(Eting)</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blogs.Eting.info/2018/04/17/NextCloud服务部署/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小橙子(Benson.C)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/6057646?s=400&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="易(Eting)">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">NextCloud服务部署</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-17T14:59:17+08:00">
+                2018-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/服务器部署/" itemprop="url" rel="index">
+                    <span itemprop="name">服务器部署</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="这个教训告诉我们，不要随便相信别人博客里的东西，文档还是官方的靠谱"><a href="#这个教训告诉我们，不要随便相信别人博客里的东西，文档还是官方的靠谱" class="headerlink" title="这个教训告诉我们，不要随便相信别人博客里的东西，文档还是官方的靠谱 ___"></a>这个教训告诉我们，不要随便相信别人博客里的东西，文档还是官方的靠谱 ___</h3><p>NextCloud 是 OwnCloud 的开源分支，使用 PHP 语言开发，类似程序通常采用 LAMP 或 LNMP 运行环境。本文介绍在 Ubuntu 16.04 LTS 系统上安装 NextCloud 13 最新版的标准方法。</p>
+<hr>
+<h2 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h2><ul>
+<li>WEB 服务器：Apache 2.x</li>
+<li>数据库：MariaDB</li>
+<li>PHP：php 7.0</li>
+<li>docker: ubuntu 16.04</li>
+</ul>
+<hr>
+<h2 id="配置-LAMP-环境"><a href="#配置-LAMP-环境" class="headerlink" title="配置 LAMP 环境"></a>配置 LAMP 环境</h2><p>运行docker</p>
+<pre><code>docker run -i -t -v ~/nextcloud:/home -p 9001:22 -p 9002:8000 -p 9003:80 --name nextcloud ubuntu:16.04 /bin/sh
+</code></pre><h3 id="1-更新系统"><a href="#1-更新系统" class="headerlink" title="1.更新系统"></a>1.更新系统</h3><pre><code>root@Ubuntu:~$ apt-get update
+root@Ubuntu:~$ apt-get upgrade
+</code></pre><h3 id="2-安装-Apache"><a href="#2-安装-Apache" class="headerlink" title="2.安装 Apache"></a>2.安装 Apache</h3><pre><code>root@Ubuntu:~$ apt-get install apache2
+</code></pre><h3 id="3-安装-MariaDB"><a href="#3-安装-MariaDB" class="headerlink" title="3.安装 MariaDB"></a>3.安装 MariaDB</h3><pre><code>root@Ubuntu:~$ apt-get install mariadb-server
+</code></pre><h3 id="4-安装-PHP-7-0"><a href="#4-安装-PHP-7-0" class="headerlink" title="4.安装 PHP 7.0"></a>4.安装 PHP 7.0</h3><pre><code>root@Ubuntu:~$ apt-get install libapache2-mod-php7.0
+</code></pre><h3 id="5-安装-PHP-扩展"><a href="#5-安装-PHP-扩展" class="headerlink" title="5.安装 PHP 扩展"></a>5.安装 PHP 扩展</h3><pre><code>root@Ubuntu:~$ apt-get install php7.0-gd php7.0-json php7.0-mysql php7.0-curl php7.0-mbstring php7.0-intl php7.0-mcrypt php-imagick php7.0-xml php7.0-zip
+</code></pre><hr>
+<h2 id="准备-NextCloud-源代码"><a href="#准备-NextCloud-源代码" class="headerlink" title="准备 NextCloud 源代码"></a>准备 NextCloud 源代码</h2><p>访问 NextCloud 官方网站 <a href="https://nextcloud.com/changelog/" target="_blank" rel="noopener">https://nextcloud.com/changelog/</a> ;使用 wget 命令下载 .tar.bz2 格式的源码压缩包:</p>
+<pre><code>root@Ubuntu:~$ wget https://download.nextcloud.com/server/releases/nextcloud-12.0.0.tar.bz2
+</code></pre><h3 id="解压源码包"><a href="#解压源码包" class="headerlink" title="解压源码包"></a>解压源码包</h3><pre><code>使用mac解压 也可以用 ubuntu tar解压
+</code></pre><h3 id="复制源代码到web服务器目录"><a href="#复制源代码到web服务器目录" class="headerlink" title="复制源代码到web服务器目录"></a>复制源代码到web服务器目录</h3><pre><code>root@Ubuntu:~$ cp -r nextcloud /var/www/
+</code></pre><h3 id="设置-nextcloud-的目录权限"><a href="#设置-nextcloud-的目录权限" class="headerlink" title="设置 nextcloud 的目录权限"></a>设置 nextcloud 的目录权限</h3><pre><code>root@Ubuntu:~$ chown -R www-data:www-data /var/www/nextcloud/
+</code></pre><hr>
+<h2 id="配置-apache-虚拟主机"><a href="#配置-apache-虚拟主机" class="headerlink" title="配置 apache 虚拟主机"></a>配置 apache 虚拟主机</h2><h3 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h3><pre><code>暂时没有处理/本地服务器
+</code></pre><h3 id="创建-nextcloud-conf-虚拟主机配置文件"><a href="#创建-nextcloud-conf-虚拟主机配置文件" class="headerlink" title="创建 nextcloud.conf 虚拟主机配置文件"></a>创建 nextcloud.conf 虚拟主机配置文件</h3><pre><code>root@Ubuntu:~$ vim /etc/apache2/sites-available/nextcloud.conf
+</code></pre><p>将以下配置信息粘贴到配置文件中，注意，请将配置文件中的 域名 替换成你自己的域名：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Alias /nextcloud <span class="string">"/var/www/nextcloud/"</span></span><br><span class="line">&lt;VirtualHost *:<span class="number">80</span>&gt;</span><br><span class="line">  ServerName <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line">  DocumentRoot /var/www/nextcloud/</span><br><span class="line">  &lt;Directory /var/www/nextcloud/&gt;</span><br><span class="line">    Options +FollowSymlinks</span><br><span class="line">    AllowOverride All</span><br><span class="line"></span><br><span class="line">    &lt;IfModule mod_dav.c&gt;</span><br><span class="line">      Dav off</span><br><span class="line">    &lt;/IfModule&gt;</span><br><span class="line"></span><br><span class="line">    SetEnv HOME /var/www/nextcloud</span><br><span class="line">    SetEnv HTTP_HOME /var/www/nextcloud</span><br><span class="line">  &lt;/Directory&gt;</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="让虚拟主机生效、启用必须的-apache-模块、重启-apache-服务器"><a href="#让虚拟主机生效、启用必须的-apache-模块、重启-apache-服务器" class="headerlink" title="让虚拟主机生效、启用必须的 apache 模块、重启 apache 服务器"></a>让虚拟主机生效、启用必须的 apache 模块、重启 apache 服务器</h3><pre><code>root@Ubuntu:~$ a2ensite nextcloud.conf
+root@Ubuntu:~$ a2enmod rewrite headers env dir mime ssl
+root@Ubuntu:~$ service apache2 restart
+</code></pre><hr>
+<h2 id="MariaDB-数据库设置"><a href="#MariaDB-数据库设置" class="headerlink" title="MariaDB 数据库设置"></a>MariaDB 数据库设置</h2><p>通过交互式的命令，提示对数据库做安全初始化设置</p>
+<h3 id="修改权限、数据库安全初始化"><a href="#修改权限、数据库安全初始化" class="headerlink" title="修改权限、数据库安全初始化"></a>修改权限、数据库安全初始化</h3><pre><code>root@Ubuntu:~$ chown -R mysql:mysql /var/lib/mysql
+root@Ubuntu:~$ mysql_secure_installation
+</code></pre><h3 id="创建-nextcloud-所需的数据库和账户"><a href="#创建-nextcloud-所需的数据库和账户" class="headerlink" title="创建 nextcloud 所需的数据库和账户"></a>创建 nextcloud 所需的数据库和账户</h3><pre><code>root@Ubuntu:~$ mysql -u root
+MariaDB [(none)]&gt; CREATE DATABASE nextcloud;
+MariaDB [(none)]&gt; CREATE USER nextcloud@localhost IDENTIFIED BY ‘password’;
+MariaDB [(none)]&gt; GRANT ALL PRIVILEGES ON nextcloud.* TO nextcloud@localhost;
+MariaDB [(none)]&gt; FLUSH PRIVILEGES;
+MariaDB [(none)]&gt; EXIT;
+</code></pre><hr>
+<h2 id="配置-NextCloud"><a href="#配置-NextCloud" class="headerlink" title="配置 NextCloud"></a>配置 NextCloud</h2><ul>
+<li>数据库用户：nextcloud (填写实际设置的用户名)</li>
+<li>数据库密码：password (填写实际设置的密码)</li>
+<li>数据库名：nextcloud</li>
+<li>localhost：数据库服务器地址，不用填。</li>
+</ul>
+<hr>
+<h2 id="启用-SSL-安全链接"><a href="#启用-SSL-安全链接" class="headerlink" title="启用 SSL 安全链接"></a>启用 SSL 安全链接</h2><p>此处我们使用 Let’s Encrypt 的免费 SSL 证书服务。</p>
+<h3 id="安装-certbot"><a href="#安装-certbot" class="headerlink" title="安装 certbot"></a>安装 certbot</h3><p>添加 certbot PPA 软件源：</p>
+<pre><code>root@Ubuntu:~$ add-apt-repository -y ppa:certbot/certbot
+</code></pre><p>刷新软件列表：</p>
+<pre><code>root@Ubuntu:~$ apt update
+</code></pre><p>安装适用于 apache 的 certbot：</p>
+<pre><code>root@Ubuntu:~$ apt install python-certbot-apache
+</code></pre><hr>
+<h2 id="获取-ssl-证书"><a href="#获取-ssl-证书" class="headerlink" title="获取 ssl 证书"></a>获取 ssl 证书</h2><p>运行 certbot 程序：</p>
+<pre><code>root@Ubuntu:~$ certbot --apache
+</code></pre><p>提示输入一个 email 用作接收通知和重置密钥：</p>
+<pre><code>Enter email address (used for urgent renewal and security notices)
+(Enter &apos;c&apos; tocancel):test@torchtree.com
+</code></pre><p>询问是否接受用户协议：</p>
+<pre><code>-------------------------------------------------------------------------------
+Please read the Terms of Service at
+https://letsencrypt.org/documents/LE-SA-v1.1.1-August-1-2016.pdf. You must agree
+in order to register with the ACME server at
+https://acme-v01.api.letsencrypt.org/directory
+-------------------------------------------------------------------------------
+(A)gree/(C)ancel: A
+</code></pre><p>询问是否愿意把 email 地址共享给基金会：</p>
+<pre><code>-------------------------------------------------------------------------------
+Would you be willing to share your email address with the Electronic Frontier
+Foundation, a founding partner of the Let&apos;s Encrypt project and the non-profit
+organization that develops Certbot? We&apos;d like to send you email about EFF and
+our work to encrypt the web, protect its users and defend digital rights.
+-------------------------------------------------------------------------------
+(Y)es/(N)o: N
+</code></pre><p>询问要为哪个域名获取 SSL 证书：</p>
+<pre><code>Which names would you like to activate HTTPS for?
+-------------------------------------------------------------------------------
+1: nc.onit.run
+-------------------------------------------------------------------------------
+Select the appropriate numbers separated by commas and/or spaces, or leave input
+blank to select all options shown (Enter &apos;c&apos; to cancel):1
+</code></pre><p>询问使用模式：</p>
+<ul>
+<li>Easy 简易模式：http 和 https 两种协议均可访问网盘</li>
+<li>Secure 安全模式：所有请求都会转向 https 安全链接</li>
+</ul>
+<hr>
+<pre><code>Please choose whether HTTPS access is required or optional.
+-------------------------------------------------------------------------------
+1: Easy - Allow both HTTP and HTTPS access to these sites
+2: Secure - Make all requests redirect to secure HTTPS access
+-------------------------------------------------------------------------------
+Select the appropriate number [1-2] then [enter] (press &apos;c&apos; to cancel): 2
+</code></pre><hr>
+<p>刷新页面即可看到，超链接已经出现了绿色的安全标识，SSL 启用成功！</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/22/iOS-运行时/" rel="next" title="[iOS] 运行时 ">
+                <i class="fa fa-chevron-left"></i> [iOS] 运行时 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://avatars3.githubusercontent.com/u/6057646?s=400&v=4"
+                alt="小橙子(Benson.C)" />
+            
+              <p class="site-author-name" itemprop="name">小橙子(Benson.C)</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#这个教训告诉我们，不要随便相信别人博客里的东西，文档还是官方的靠谱"><span class="nav-number">1.</span> <span class="nav-text">这个教训告诉我们，不要随便相信别人博客里的东西，文档还是官方的靠谱 ___</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行环境"><span class="nav-number"></span> <span class="nav-text">运行环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-LAMP-环境"><span class="nav-number"></span> <span class="nav-text">配置 LAMP 环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-更新系统"><span class="nav-number">1.</span> <span class="nav-text">1.更新系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-安装-Apache"><span class="nav-number">2.</span> <span class="nav-text">2.安装 Apache</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-安装-MariaDB"><span class="nav-number">3.</span> <span class="nav-text">3.安装 MariaDB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-安装-PHP-7-0"><span class="nav-number">4.</span> <span class="nav-text">4.安装 PHP 7.0</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-安装-PHP-扩展"><span class="nav-number">5.</span> <span class="nav-text">5.安装 PHP 扩展</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备-NextCloud-源代码"><span class="nav-number"></span> <span class="nav-text">准备 NextCloud 源代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解压源码包"><span class="nav-number">1.</span> <span class="nav-text">解压源码包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复制源代码到web服务器目录"><span class="nav-number">2.</span> <span class="nav-text">复制源代码到web服务器目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置-nextcloud-的目录权限"><span class="nav-number">3.</span> <span class="nav-text">设置 nextcloud 的目录权限</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-apache-虚拟主机"><span class="nav-number"></span> <span class="nav-text">配置 apache 虚拟主机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#绑定域名"><span class="nav-number">1.</span> <span class="nav-text">绑定域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建-nextcloud-conf-虚拟主机配置文件"><span class="nav-number">2.</span> <span class="nav-text">创建 nextcloud.conf 虚拟主机配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#让虚拟主机生效、启用必须的-apache-模块、重启-apache-服务器"><span class="nav-number">3.</span> <span class="nav-text">让虚拟主机生效、启用必须的 apache 模块、重启 apache 服务器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MariaDB-数据库设置"><span class="nav-number"></span> <span class="nav-text">MariaDB 数据库设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改权限、数据库安全初始化"><span class="nav-number">1.</span> <span class="nav-text">修改权限、数据库安全初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建-nextcloud-所需的数据库和账户"><span class="nav-number">2.</span> <span class="nav-text">创建 nextcloud 所需的数据库和账户</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-NextCloud"><span class="nav-number"></span> <span class="nav-text">配置 NextCloud</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启用-SSL-安全链接"><span class="nav-number"></span> <span class="nav-text">启用 SSL 安全链接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-certbot"><span class="nav-number">1.</span> <span class="nav-text">安装 certbot</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取-ssl-证书"><span class="nav-number"></span> <span class="nav-text">获取 ssl 证书</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小橙子(Benson.C)</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
