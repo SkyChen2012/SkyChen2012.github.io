@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="易(Eting)">
 <meta property="og:description" content="这个教训告诉我们，不要随便相信别人博客里的东西，文档还是官方的靠谱 ___NextCloud 是 OwnCloud 的开源分支，使用 PHP 语言开发，类似程序通常采用 LAMP 或 LNMP 运行环境。本文介绍在 Ubuntu 16.04 LTS 系统上安装 NextCloud 13 最新版的标准方法。  运行环境 WEB 服务器：Apache 2.x 数据库：MariaDB PHP：php 7">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-17T08:25:00.330Z">
+<meta property="og:updated_time" content="2018-04-17T10:08:16.806Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NextCloud服务部署">
 <meta name="twitter:description" content="这个教训告诉我们，不要随便相信别人博客里的东西，文档还是官方的靠谱 ___NextCloud 是 OwnCloud 的开源分支，使用 PHP 语言开发，类似程序通常采用 LAMP 或 LNMP 运行环境。本文介绍在 Ubuntu 16.04 LTS 系统上安装 NextCloud 13 最新版的标准方法。  运行环境 WEB 服务器：Apache 2.x 数据库：MariaDB PHP：php 7">
@@ -365,7 +365,7 @@
 </code></pre><h3 id="1-更新系统"><a href="#1-更新系统" class="headerlink" title="1.更新系统"></a>1.更新系统</h3><pre><code>root@Ubuntu:~$ apt-get update
 root@Ubuntu:~$ apt-get upgrade
 </code></pre><h3 id="2-安装-Apache"><a href="#2-安装-Apache" class="headerlink" title="2.安装 Apache"></a>2.安装 Apache</h3><pre><code>root@Ubuntu:~$ apt-get install apache2
-</code></pre><h3 id="3-安装-MariaDB"><a href="#3-安装-MariaDB" class="headerlink" title="3.安装 MariaDB"></a>3.安装 MariaDB</h3><pre><code>root@Ubuntu:~$ apt-get install mariadb-server
+</code></pre><h3 id="3-安装-MariaDB"><a href="#3-安装-MariaDB" class="headerlink" title="3.安装 MariaDB"></a>3.安装 MariaDB</h3><pre><code>root@Ubuntu:~$ apt-get install mariadb-server python-pymysql
 </code></pre><h3 id="4-安装-PHP-7-0"><a href="#4-安装-PHP-7-0" class="headerlink" title="4.安装 PHP 7.0"></a>4.安装 PHP 7.0</h3><pre><code>root@Ubuntu:~$ apt-get install libapache2-mod-php7.0
 </code></pre><h3 id="5-安装-PHP-扩展"><a href="#5-安装-PHP-扩展" class="headerlink" title="5.安装 PHP 扩展"></a>5.安装 PHP 扩展</h3><pre><code>root@Ubuntu:~$ apt-get install php7.0-gd php7.0-json php7.0-mysql php7.0-curl php7.0-mbstring php7.0-intl php7.0-mcrypt php-imagick php7.0-xml php7.0-zip
 </code></pre><hr>
@@ -384,6 +384,7 @@ root@Ubuntu:~$ service apache2 restart
 </code></pre><hr>
 <h2 id="MariaDB-数据库设置"><a href="#MariaDB-数据库设置" class="headerlink" title="MariaDB 数据库设置"></a>MariaDB 数据库设置</h2><p>通过交互式的命令，提示对数据库做安全初始化设置</p>
 <h3 id="修改权限、数据库安全初始化"><a href="#修改权限、数据库安全初始化" class="headerlink" title="修改权限、数据库安全初始化"></a>修改权限、数据库安全初始化</h3><pre><code>root@Ubuntu:~$ chown -R mysql:mysql /var/lib/mysql
+root@Ubuntu:~$ service mysql restart
 root@Ubuntu:~$ mysql_secure_installation
 </code></pre><h3 id="创建-nextcloud-所需的数据库和账户"><a href="#创建-nextcloud-所需的数据库和账户" class="headerlink" title="创建 nextcloud 所需的数据库和账户"></a>创建 nextcloud 所需的数据库和账户</h3><pre><code>root@Ubuntu:~$ mysql -u root
 MariaDB [(none)]&gt; CREATE DATABASE nextcloud;
